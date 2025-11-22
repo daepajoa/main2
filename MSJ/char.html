@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>루멘 크로니클 캐릭터 소개</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 40px 16px;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      background: #05060a;
+      color: #f5f5f5;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      margin: 0 0 24px;
+      font-size: 1.6rem;
+      font-weight: 700;
+    }
+
+    .character-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+
+    .character-card {
+      flex: 1 1 260px;
+      max-width: 340px;
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 18px;
+      padding: 14px 14px 16px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
+    }
+
+    .character-image-wrap {
+      width: 100%;
+      aspect-ratio: 29 / 20; /* 1856 x 1280 비율 */
+      overflow: hidden;
+      border-radius: 14px;
+      background: #11131a;
+    }
+
+    .character-image-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .character-name {
+      margin: 12px 0 4px;
+      font-size: 1.05rem;
+      font-weight: 700;
+    }
+
+    .character-meta {
+      margin: 0;
+      font-size: 0.86rem;
+      line-height: 1.5;
+      color: #d0d0d0;
+    }
+
+    .character-meta span.label {
+      color: #9aa0ff;
+      font-weight: 600;
+      margin-right: 4px;
+    }
+
+    @media (max-width: 768px) {
+      .character-grid {
+        flex-direction: column;
+      }
+      .character-card {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>루멘 크로니클 캐릭터 소개</h1>
+
+    <div class="character-grid">
+      <!-- a: 리시아 벨도라 -->
+      <div class="character-card">
+        <div class="character-image-wrap">
+          <img src="https://daepajoa.moe/MSJ/a/101.webp" alt="리시아 벨도라" />
+        </div>
+        <p class="character-name">리시아 벨도라</p>
+        <p class="character-meta">
+          <span class="label">정보</span> 100+세(불명) · 여성 · 불멸의 여제
+        </p>
+      </div>
+
+      <!-- b: 세라 린델 -->
+      <div class="character-card">
+        <div class="character-image-wrap">
+          <img src="https://daepajoa.moe/MSJ/b/101.webp" alt="세라 린델" />
+        </div>
+        <p class="character-name">세라 린델</p>
+        <p class="character-meta">
+          <span class="label">정보</span> 26세 · 여성 · 성녀
+        </p>
+      </div>
+
+      <!-- c: 사리엘 -->
+      <div class="character-card">
+        <div class="character-image-wrap">
+          <img src="https://daepajoa.moe/MSJ/c/101.webp" alt="사리엘" />
+        </div>
+        <p class="character-name">사리엘</p>
+        <p class="character-meta">
+          <span class="label">정보</span> 34세 · 여성 · 그림자 사제
+        </p>
+      </div>
+
+      <!-- d: 엘라나 미스트렌 -->
+      <div class="character-card">
+        <div class="character-image-wrap">
+          <img src="https://daepajoa.moe/MSJ/d/101.webp" alt="엘라나 미스트렌" />
+        </div>
+        <p class="character-name">엘라나 미스트렌</p>
+        <p class="character-meta">
+          <span class="label">정보</span> 29세 · 여성 · 채집자길드 중간관리자
+        </p>
+      </div>
+
+      <!-- e: 칼라 아네모스 -->
+      <div class="character-card">
+        <div class="character-image-wrap">
+          <img src="https://daepajoa.moe/MSJ/e/101.webp" alt="칼라 아네모스" />
+        </div>
+        <p class="character-name">칼라 아네모스</p>
+        <p class="character-meta">
+          <span class="label">정보</span> 31세 · 여성 · 용병연맹 대장
+        </p>
+      </div>
+
+      <!-- f: 다리우스 알트하임 -->
+      <div class="character-card">
+        <div class="character-image-wrap">
+          <img src="https://daepajoa.moe/MSJ/f/101.webp" alt="다리우스 알트하임" />
+        </div>
+        <p class="character-name">다리우스 알트하임</p>
+        <p class="character-meta">
+          <span class="label">정보</span> 38세 · 남성 · 아르디움제국 섭정
+        </p>
+      </div>
+
+      <!-- g: 아이리스 알트하임 -->
+      <div class="character-card">
+        <div class="character-image-wrap">
+          <img src="https://daepajoa.moe/MSJ/g/101.webp" alt="아이리스 알트하임" />
+        </div>
+        <p class="character-name">아이리스 알트하임</p>
+        <p class="character-meta">
+          <span class="label">정보</span> 24세 · 여성 · 아르디움제국 황녀
+        </p>
+      </div>
+
+      <!-- h: 라자루스 -->
+      <div class="character-card">
+        <div class="character-image-wrap">
+          <img src="https://daepajoa.moe/MSJ/h/101.webp" alt="라자루스" />
+        </div>
+        <p class="character-name">라자루스</p>
+        <p class="character-meta">
+          <span class="label">정보</span> 불명 · 여성 · 광부
+        </p>
+      </div>
+
+      <!-- i: 벨라 -->
+      <div class="character-card">
+        <div class="character-image-wrap">
+          <img src="https://daepajoa.moe/MSJ/i/101.webp" alt="벨라" />
+        </div>
+        <p class="character-name">벨라</p>
+        <p class="character-meta">
+          <span class="label">정보</span> 22세 · 여성 · 3류 채집자
+        </p>
+      </div>
+
+      <!-- j: 이오스 -->
+      <div class="character-card">
+        <div class="character-image-wrap">
+          <img src="https://daepajoa.moe/MSJ/j/101.webp" alt="이오스" />
+        </div>
+        <p class="character-name">이오스</p>
+        <p class="character-meta">
+          <span class="label">정보</span> 25세 · 남성 · 추방 연금사
+        </p>
+      </div>
+
+      <!-- k: 리안 -->
+      <div class="character-card">
+        <div class="character-image-wrap">
+          <img src="https://daepajoa.moe/MSJ/k/101.webp" alt="리안" />
+        </div>
+        <p class="character-name">리안</p>
+        <p class="character-meta">
+          <span class="label">정보</span> 28세 · 여성 · 반인반마 용병
+        </p>
+      </div>
+
+      <!-- l: 오르딘 -->
+      <div class="character-card">
+        <div class="character-image-wrap">
+          <img src="https://daepajoa.moe/MSJ/l/101.webp" alt="오르딘" />
+        </div>
+        <p class="character-name">오르딘</p>
+        <p class="character-meta">
+          <span class="label">정보</span> 35세 · 남성 · 황금연합 밀수왕
+        </p>
+      </div>
+
+      <!-- m: 미아 -->
+      <div class="character-card">
+        <div class="character-image-wrap">
+          <img src="https://daepajoa.moe/MSJ/m/101.webp" alt="미아" />
+        </div>
+        <p class="character-name">미아</p>
+        <p class="character-meta">
+          <span class="label">정보</span> 33세 · 여성 · 황금연합 대상인
+        </p>
+      </div>
+
+      <!-- n: 에스텔 -->
+      <div class="character-card">
+        <div class="character-image-wrap">
+          <img src="https://daepajoa.moe/MSJ/n/101.webp" alt="에스텔" />
+        </div>
+        <p class="character-name">에스텔</p>
+        <p class="character-meta">
+          <span class="label">정보</span> 26세 · 여성 · 정보상
+        </p>
+      </div>
+
+      <!-- o: 미루스 벨하임 -->
+      <div class="character-card">
+        <div class="character-image-wrap">
+          <img src="https://daepajoa.moe/MSJ/o/101.webp" alt="미루스 벨하임" />
+        </div>
+        <p class="character-name">미루스 벨하임</p>
+        <p class="character-meta">
+          <span class="label">정보</span> 불명 · 여성 · 프리그족 얼음사제
+        </p>
+      </div>
+
+      <!-- p: 하랄드 프리그손 -->
+      <div class="character-card">
+        <div class="character-image-wrap">
+          <img src="https://daepajoa.moe/MSJ/p/101.webp" alt="하랄드 프리그손" />
+        </div>
+        <p class="character-name">하랄드 프리그손</p>
+        <p class="character-meta">
+          <span class="label">정보</span> 87세 · 남성 · 프리그족 장로
+        </p>
+      </div>
+
+      <!-- q: 마리오넬 -->
+      <div class="character-card">
+        <div class="character-image-wrap">
+          <img src="https://daepajoa.moe/MSJ/q/101.webp" alt="마리오넬" />
+        </div>
+        <p class="character-name">마리오넬</p>
+        <p class="character-meta">
+          <span class="label">정보</span> 30세 · 여성 · 루멘교 전령관
+        </p>
+      </div>
+
+      <!-- r: 사리아 -->
+      <div class="character-card">
+        <div class="character-image-wrap">
+          <img src="https://daepajoa.moe/MSJ/r/101.webp" alt="사리아" />
+        </div>
+        <p class="character-name">사리아</p>
+        <p class="character-meta">
+          <span class="label">정보</span> 22세 · 여성 · 이아노스교 하급 사제
+        </p>
+      </div>
+
+      <!-- s: 빙혈룡 -->
+      <div class="character-card">
+        <div class="character-image-wrap">
+          <img src="https://daepajoa.moe/MSJ/s/101.webp" alt="빙혈룡" />
+        </div>
+        <p class="character-name">빙혈룡</p>
+        <p class="character-meta">
+          <span class="label">정보</span> 1000+세 · 여성 · 프로스트 드래곤
+        </p>
+      </div>
+
+      <!-- t: 루멘 -->
+      <div class="character-card">
+        <div class="character-image-wrap">
+          <img src="https://daepajoa.moe/MSJ/t/101.webp" alt="루멘" />
+        </div>
+        <p class="character-name">루멘</p>
+        <p class="character-meta">
+          <span class="label">정보</span> ?? · 여성 · 빛과 생명의 신
+        </p>
+      </div>
+
+      <!-- u: 이아노스 -->
+      <div class="character-card">
+        <div class="character-image-wrap">
+          <img src="https://daepajoa.moe/MSJ/u/101.webp" alt="이아노스" />
+        </div>
+        <p class="character-name">이아노스</p>
+        <p class="character-meta">
+          <span class="label">정보</span> ?? · 여성 · 어둠과 죽음의 신
+        </p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

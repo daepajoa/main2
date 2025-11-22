@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>루멘 크로니클 적대 생물</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 40px 16px;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      background: #05060a;
+      color: #f5f5f5;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      margin: 0 0 32px;
+      font-size: 1.8rem;
+      font-weight: 700;
+    }
+
+    h2 {
+      margin: 32px 0 12px;
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+
+    .region-block:first-of-type h2 {
+      margin-top: 0;
+    }
+
+    .mob-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .mob-card {
+      flex: 1 1 240px;
+      max-width: 320px;
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 16px;
+      padding: 10px 10px 12px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.45);
+    }
+
+    .mob-image-wrap {
+      width: 100%;
+      aspect-ratio: 29 / 20;
+      overflow: hidden;
+      border-radius: 12px;
+      background: #11131a;
+    }
+
+    .mob-image-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .mob-name {
+      margin: 8px 0 0;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .mob-index {
+      opacity: 0.7;
+      font-size: 0.8rem;
+      margin-right: 6px;
+    }
+
+    @media (max-width: 768px) {
+      .mob-grid {
+        flex-direction: column;
+      }
+      .mob-card {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>루멘 크로니클 적대 생물 리스트</h1>
+
+    <!-- 공통 -->
+    <section class="region-block">
+      <h2>공통</h2>
+      <div class="mob-grid">
+        <!-- 1. 도적 / 301 -->
+        <div class="mob-card">
+          <div class="mob-image-wrap">
+            <img src="https://daepajoa.moe/MSJ/y/301.webp" alt="도적" />
+          </div>
+          <p class="mob-name">
+            <span class="mob-index">1.</span>도적
+          </p>
+        </div>
+
+        <!-- 2. 고블린 / 302 -->
+        <div class="mob-card">
+          <div class="mob-image-wrap">
+            <img src="https://daepajoa.moe/MSJ/y/302.webp" alt="고블린" />
+          </div>
+          <p class="mob-name">
+            <span class="mob-index">2.</span>고블린
+          </p>
+        </div>
+
+        <!-- 3. 비명자 / 303 -->
+        <div class="mob-card">
+          <div class="mob-image-wrap">
+            <img src="https://daepajoa.moe/MSJ/y/303.webp" alt="비명자" />
+          </div>
+          <p class="mob-name">
+            <span class="mob-index">3.</span>비명자
+          </p>
+        </div>
+
+        <!-- 4. 마석파편체 / 304 -->
+        <div class="mob-card">
+          <div class="mob-image-wrap">
+            <img src="https://daepajoa.moe/MSJ/y/304.webp" alt="마석파편체" />
+          </div>
+          <p class="mob-name">
+            <span class="mob-index">4.</span>마석파편체
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 바하르 폐허지대 -->
+    <section class="region-block">
+      <h2>바하르 폐허지대</h2>
+      <div class="mob-grid">
+        <!-- 5. 모래사신 / 305 -->
+        <div class="mob-card">
+          <div class="mob-image-wrap">
+            <img src="https://daepajoa.moe/MSJ/y/305.webp" alt="모래사신" />
+          </div>
+          <p class="mob-name">
+            <span class="mob-index">5.</span>모래사신
+          </p>
+        </div>
+
+        <!-- 6. 기생병기 / 306 -->
+        <div class="mob-card">
+          <div class="mob-image-wrap">
+            <img src="https://daepajoa.moe/MSJ/y/306.webp" alt="기생병기" />
+          </div>
+          <p class="mob-name">
+            <span class="mob-index">6.</span>기생병기
+          </p>
+        </div>
+
+        <!-- 7. 부식된 상인 / 307 -->
+        <div class="mob-card">
+          <div class="mob-image-wrap">
+            <img src="https://daepajoa.moe/MSJ/y/307.webp" alt="부식된 상인" />
+          </div>
+          <p class="mob-name">
+            <span class="mob-index">7.</span>부식된 상인
+          </p>
+        </div>
+
+        <!-- 8. 기계 생명체 / 308 -->
+        <div class="mob-card">
+          <div class="mob-image-wrap">
+            <img src="https://daepajoa.moe/MSJ/y/308.webp" alt="기계 생명체" />
+          </div>
+          <p class="mob-name">
+            <span class="mob-index">8.</span>기계 생명체
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 오브리안 전선 -->
+    <section class="region-block">
+      <h2>오브리안 전선</h2>
+      <div class="mob-grid">
+        <!-- 9. 포그워커 / 309 -->
+        <div class="mob-card">
+          <div class="mob-image-wrap">
+            <img src="https://daepajoa.moe/MSJ/y/309.webp" alt="포그워커" />
+          </div>
+          <p class="mob-name">
+            <span class="mob-index">9.</span>포그워커
+          </p>
+        </div>
+
+        <!-- 10. 철혈충 / 310 -->
+        <div class="mob-card">
+          <div class="mob-image-wrap">
+            <img src="https://daepajoa.moe/MSJ/y/310.webp" alt="철혈충" />
+          </div>
+          <p class="mob-name">
+            <span class="mob-index">10.</span>철혈충
+          </p>
+        </div>
+
+        <!-- 11. 전장의 여왕 / 311 -->
+        <div class="mob-card">
+          <div class="mob-image-wrap">
+            <img src="https://daepajoa.moe/MSJ/y/311.webp" alt="전장의 여왕" />
+          </div>
+          <p class="mob-name">
+            <span class="mob-index">11.</span>전장의 여왕
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 아르디움 제국령 -->
+    <section class="region-block">
+      <h2>아르디움 제국령</h2>
+      <div class="mob-grid">
+        <!-- 12. 마도기병 / 312 -->
+        <div class="mob-card">
+          <div class="mob-image-wrap">
+            <img src="https://daepajoa.moe/MSJ/y/312.webp" alt="마도기병" />
+          </div>
+          <p class="mob-name">
+            <span class="mob-index">12.</span>마도기병
+          </p>
+        </div>
+
+        <!-- 13. 실험체 / 313 -->
+        <div class="mob-card">
+          <div class="mob-image-wrap">
+            <img src="https://daepajoa.moe/MSJ/y/313.webp" alt="실험체" />
+          </div>
+          <p class="mob-name">
+            <span class="mob-index">13.</span>실험체
+          </p>
+        </div>
+
+        <!-- 14. 슬럼가 / 314 -->
+        <div class="mob-card">
+          <div class="mob-image-wrap">
+            <img src="https://daepajoa.moe/MSJ/y/314.webp" alt="슬럼가" />
+          </div>
+          <p class="mob-name">
+            <span class="mob-index">14.</span>슬럼가
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 네메시스 연안 -->
+    <section class="region-block">
+      <h2>네메시스 연안</h2>
+      <div class="mob-grid">
+        <!-- 15. 심연 상인 / 315 -->
+        <div class="mob-card">
+          <div class="mob-image-wrap">
+            <img src="https://daepajoa.moe/MSJ/y/315.webp" alt="심연 상인" />
+          </div>
+          <p class="mob-name">
+            <span class="mob-index">15.</span>심연 상인
+          </p>
+        </div>
+
+        <!-- 16. 해골어 / 316 -->
+        <div class="mob-card">
+          <div class="mob-image-wrap">
+            <img src="https://daepajoa.moe/MSJ/y/316.webp" alt="해골어" />
+          </div>
+          <p class="mob-name">
+            <span class="mob-index">16.</span>해골어
+          </p>
+        </div>
+
+        <!-- 17. 황금딱정벌레 / 317 -->
+        <div class="mob-card">
+          <div class="mob-image-wrap">
+            <img src="https://daepajoa.moe/MSJ/y/317.webp" alt="황금딱정벌레" />
+          </div>
+          <p class="mob-name">
+            <span class="mob-index">17.</span>황금딱정벌레
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 노르드하임 -->
+    <section class="region-block">
+      <h2>노르드하임</h2>
+      <div class="mob-grid">
+        <!-- 18. 서릿발 망령 / 318 -->
+        <div class="mob-card">
+          <div class="mob-image-wrap">
+            <img src="https://daepajoa.moe/MSJ/y/318.webp" alt="서릿발 망령" />
+          </div>
+          <p class="mob-name">
+            <span class="mob-index">18.</span>서릿발 망령
+          </p>
+        </div>
+
+        <!-- 19. 설인병단 / 319 -->
+        <div class="mob-card">
+          <div class="mob-image-wrap">
+            <img src="https://daepajoa.moe/MSJ/y/319.webp" alt="설인병단" />
+          </div>
+          <p class="mob-name">
+            <span class="mob-index">19.</span>설인병단
+          </p>
+        </div>
+
+        <!-- 20. 얼음거인 / 320 -->
+        <div class="mob-card">
+          <div class="mob-image-wrap">
+            <img src="https://daepajoa.moe/MSJ/y/320.webp" alt="얼음거인" />
+          </div>
+          <p class="mob-name">
+            <span class="mob-index">20.</span>얼음거인
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 벨라트리움의 그늘 -->
+    <section class="region-block">
+      <h2>벨라트리움의 그늘</h2>
+      <div class="mob-grid">
+        <!-- 21. 그림자사도 / 321 -->
+        <div class="mob-card">
+          <div class="mob-image-wrap">
+            <img src="https://daepajoa.moe/MSJ/y/321.webp" alt="그림자사도" />
+          </div>
+          <p class="mob-name">
+            <span class="mob-index">21.</span>그림자사도
+          </p>
+        </div>
+
+        <!-- 22. 묘계벌레 / 322 -->
+        <div class="mob-card">
+          <div class="mob-image-wrap">
+            <img src="https://daepajoa.moe/MSJ/y/322.webp" alt="묘계벌레" />
+          </div>
+          <p class="mob-name">
+            <span class="mob-index">22.</span>묘계벌레
+          </p>
+        </div>
+
+        <!-- 23. 속죄자 / 323 -->
+        <div class="mob-card">
+          <div class="mob-image-wrap">
+            <img src="https://daepajoa.moe/MSJ/y/323.webp" alt="속죄자" />
+          </div>
+          <p class="mob-name">
+            <span class="mob-index">23.</span>속죄자
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 이터 스텝 -->
+    <section class="region-block">
+      <h2>이터 스텝</h2>
+      <div class="mob-grid">
+        <!-- 24. 사막의 주시자 / 324 -->
+        <div class="mob-card">
+          <div class="mob-image-wrap">
+            <img src="https://daepajoa.moe/MSJ/y/324.webp" alt="사막의 주시자" />
+          </div>
+          <p class="mob-name">
+            <span class="mob-index">24.</span>사막의 주시자
+          </p>
+        </div>
+
+        <!-- 25. 나사드 수호자 / 325 -->
+        <div class="mob-card">
+          <div class="mob-image-wrap">
+            <img src="https://daepajoa.moe/MSJ/y/325.webp" alt="나사드 수호자" />
+          </div>
+          <p class="mob-name">
+            <span class="mob-index">25.</span>나사드 수호자
+          </p>
+        </div>
+
+        <!-- 26. 화염혼 / 326 -->
+        <div class="mob-card">
+          <div class="mob-image-wrap">
+            <img src="https://daepajoa.moe/MSJ/y/326.webp" alt="화염혼" />
+          </div>
+          <p class="mob-name">
+            <span class="mob-index">26.</span>화염혼
+          </p>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

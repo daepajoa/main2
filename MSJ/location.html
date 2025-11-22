@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>루멘 크로니클 지역 소개</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 40px 16px;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      background: #05060a;
+      color: #f5f5f5;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      margin: 0 0 32px;
+      font-size: 1.8rem;
+      font-weight: 700;
+    }
+
+    h2 {
+      margin: 32px 0 12px;
+      font-size: 1.25rem;
+      font-weight: 700;
+    }
+
+    .region-block:first-of-type h2 {
+      margin-top: 0;
+    }
+
+    .location-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .location-card {
+      flex: 1 1 260px;
+      max-width: 340px;
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 18px;
+      padding: 12px 12px 14px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.45);
+    }
+
+    .location-image-wrap {
+      width: 100%;
+      aspect-ratio: 29 / 20; /* 1856 x 1280 비율 */
+      overflow: hidden;
+      border-radius: 14px;
+      background: #11131a;
+    }
+
+    .location-image-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .location-name {
+      margin: 10px 0 0;
+      font-size: 0.96rem;
+      font-weight: 600;
+    }
+
+    .location-index {
+      opacity: 0.7;
+      font-size: 0.82rem;
+      margin-right: 6px;
+    }
+
+    @media (max-width: 768px) {
+      .location-grid {
+        flex-direction: column;
+      }
+      .location-card {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>루멘 크로니클 지역 리스트</h1>
+
+    <!-- 루멘 대성권 -->
+    <section class="region-block">
+      <h2>루멘 대성권</h2>
+      <div class="location-grid">
+        <!-- 1. 루멘 대성당 / 901 -->
+        <div class="location-card">
+          <div class="location-image-wrap">
+            <img src="https://daepajoa.moe/MSJ/z/901.webp" alt="루멘 대성당" />
+          </div>
+          <p class="location-name">
+            <span class="location-index">1.</span>루멘 대성당
+          </p>
+        </div>
+
+        <!-- 2. 에테르 광장 / 902 -->
+        <div class="location-card">
+          <div class="location-image-wrap">
+            <img src="https://daepajoa.moe/MSJ/z/902.webp" alt="에테르 광장" />
+          </div>
+          <p class="location-name">
+            <span class="location-index">2.</span>에테르 광장
+          </p>
+        </div>
+
+        <!-- 3. 베르미온 행정구 / 903 -->
+        <div class="location-card">
+          <div class="location-image-wrap">
+            <img src="https://daepajoa.moe/MSJ/z/903.webp" alt="베르미온 행정구" />
+          </div>
+          <p class="location-name">
+            <span class="location-index">3.</span>베르미온 행정구
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 바하르 폐허지대 -->
+    <section class="region-block">
+      <h2>바하르 폐허지대</h2>
+      <div class="location-grid">
+        <!-- 4. 붉은 모래시장 / 904 -->
+        <div class="location-card">
+          <div class="location-image-wrap">
+            <img src="https://daepajoa.moe/MSJ/z/904.webp" alt="붉은 모래시장" />
+          </div>
+          <p class="location-name">
+            <span class="location-index">4.</span>붉은 모래시장
+          </p>
+        </div>
+
+        <!-- 5. 바하르 구항 / 905 -->
+        <div class="location-card">
+          <div class="location-image-wrap">
+            <img src="https://daepajoa.moe/MSJ/z/905.webp" alt="바하르 구항" />
+          </div>
+          <p class="location-name">
+            <span class="location-index">5.</span>바하르 구항
+          </p>
+        </div>
+
+        <!-- 6. 고철 골목 / 906 -->
+        <div class="location-card">
+          <div class="location-image-wrap">
+            <img src="https://daepajoa.moe/MSJ/z/906.webp" alt="고철 골목" />
+          </div>
+          <p class="location-name">
+            <span class="location-index">6.</span>고철 골목
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 오브리안 전선 -->
+    <section class="region-block">
+      <h2>오브리안 전선</h2>
+      <div class="location-grid">
+        <!-- 7. 포그밸 늪지 / 907 -->
+        <div class="location-card">
+          <div class="location-image-wrap">
+            <img src="https://daepajoa.moe/MSJ/z/907.webp" alt="포그밸 늪지" />
+          </div>
+          <p class="location-name">
+            <span class="location-index">7.</span>포그밸 늪지
+          </p>
+        </div>
+
+        <!-- 8. 블랙스파인 협곡 / 908 -->
+        <div class="location-card">
+          <div class="location-image-wrap">
+            <img src="https://daepajoa.moe/MSJ/z/908.webp" alt="블랙스파인 협곡" />
+          </div>
+          <p class="location-name">
+            <span class="location-index">8.</span>블랙스파인 협곡
+          </p>
+        </div>
+
+        <!-- 9. 침묵의 참호 / 909 -->
+        <div class="location-card">
+          <div class="location-image-wrap">
+            <img src="https://daepajoa.moe/MSJ/z/909.webp" alt="침묵의 참호" />
+          </div>
+          <p class="location-name">
+            <span class="location-index">9.</span>침묵의 참호
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 아르디움 제국령 -->
+    <section class="region-block">
+      <h2>아르디움 제국령</h2>
+      <div class="location-grid">
+        <!-- 10. 알트하임 수도 / 910 -->
+        <div class="location-card">
+          <div class="location-image-wrap">
+            <img src="https://daepajoa.moe/MSJ/z/910.webp" alt="알트하임 수도" />
+          </div>
+          <p class="location-name">
+            <span class="location-index">10.</span>알트하임 수도
+          </p>
+        </div>
+
+        <!-- 11. 아이젠델 요새 / 911 -->
+        <div class="location-card">
+          <div class="location-image-wrap">
+            <img src="https://daepajoa.moe/MSJ/z/911.webp" alt="아이젠델 요새" />
+          </div>
+          <p class="location-name">
+            <span class="location-index">11.</span>아이젠델 요새
+          </p>
+        </div>
+
+        <!-- 12. 아니마 연구구 / 912 -->
+        <div class="location-card">
+          <div class="location-image-wrap">
+            <img src="https://daepajoa.moe/MSJ/z/912.webp" alt="아니마 연구구" />
+          </div>
+          <p class="location-name">
+            <span class="location-index">12.</span>아니마 연구구
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 네메시스 연안 -->
+    <section class="region-block">
+      <h2>네메시스 연안</h2>
+      <div class="location-grid">
+        <!-- 13. 세라포트 항구도시 / 913 -->
+        <div class="location-card">
+          <div class="location-image-wrap">
+            <img src="https://daepajoa.moe/MSJ/z/913.webp" alt="세라포트 항구도시" />
+          </div>
+          <p class="location-name">
+            <span class="location-index">13.</span>세라포트 항구도시
+          </p>
+        </div>
+
+        <!-- 14. 프라임시장 / 914 -->
+        <div class="location-card">
+          <div class="location-image-wrap">
+            <img src="https://daepajoa.moe/MSJ/z/914.webp" alt="프라임시장" />
+          </div>
+          <p class="location-name">
+            <span class="location-index">14.</span>프라임시장
+          </p>
+        </div>
+
+        <!-- 15. 아바돈 등대 / 915 -->
+        <div class="location-card">
+          <div class="location-image-wrap">
+            <img src="https://daepajoa.moe/MSJ/z/915.webp" alt="아바돈 등대" />
+          </div>
+          <p class="location-name">
+            <span class="location-index">15.</span>아바돈 등대
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 노르드하임 -->
+    <section class="region-block">
+      <h2>노르드하임</h2>
+      <div class="location-grid">
+        <!-- 16. 미루스의 사원 / 916 -->
+        <div class="location-card">
+          <div class="location-image-wrap">
+            <img src="https://daepajoa.moe/MSJ/z/916.webp" alt="미루스의 사원" />
+          </div>
+          <p class="location-name">
+            <span class="location-index">16.</span>미루스의 사원
+          </p>
+        </div>
+
+        <!-- 17. 드래곤밸리 / 917 -->
+        <div class="location-card">
+          <div class="location-image-wrap">
+            <img src="https://daepajoa.moe/MSJ/z/917.webp" alt="드래곤밸리" />
+          </div>
+          <p class="location-name">
+            <span class="location-index">17.</span>드래곤밸리
+          </p>
+        </div>
+
+        <!-- 18. 하르노스 폐광 / 918 -->
+        <div class="location-card">
+          <div class="location-image-wrap">
+            <img src="https://daepajoa.moe/MSJ/z/918.webp" alt="하르노스 폐광" />
+          </div>
+          <p class="location-name">
+            <span class="location-index">18.</span>하르노스 폐광
+          </p>
+        </div>
+
+        <!-- 19. 프리그하임 / 919 -->
+        <div class="location-card">
+          <div class="location-image-wrap">
+            <img src="https://daepajoa.moe/MSJ/z/919.webp" alt="프리그하임" />
+          </div>
+          <p class="location-name">
+            <span class="location-index">19.</span>프리그하임
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 벨라트리움의 그늘 -->
+    <section class="region-block">
+      <h2>벨라트리움의 그늘</h2>
+      <div class="location-grid">
+        <!-- 20. 움브라 / 920 -->
+        <div class="location-card">
+          <div class="location-image-wrap">
+            <img src="https://daepajoa.moe/MSJ/z/920.webp" alt="움브라" />
+          </div>
+          <p class="location-name">
+            <span class="location-index">20.</span>움브라
+          </p>
+        </div>
+
+        <!-- 21. 검은 묘계 / 921 -->
+        <div class="location-card">
+          <div class="location-image-wrap">
+            <img src="https://daepajoa.moe/MSJ/z/921.webp" alt="검은 묘계" />
+          </div>
+          <p class="location-name">
+            <span class="location-index">21.</span>검은 묘계
+          </p>
+        </div>
+
+        <!-- 22. 속죄의 강 / 922 -->
+        <div class="location-card">
+          <div class="location-image-wrap">
+            <img src="https://daepajoa.moe/MSJ/z/922.webp" alt="속죄의 강" />
+          </div>
+          <p class="location-name">
+            <span class="location-index">22.</span>속죄의 강
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 이터 스텝 + 천계 -->
+    <section class="region-block">
+      <h2>이터 스텝 & 그 너머</h2>
+      <div class="location-grid">
+        <!-- 23. 나사드 유적 / 923 -->
+        <div class="location-card">
+          <div class="location-image-wrap">
+            <img src="https://daepajoa.moe/MSJ/z/923.webp" alt="나사드 유적" />
+          </div>
+          <p class="location-name">
+            <span class="location-index">23.</span>나사드 유적
+          </p>
+        </div>
+
+        <!-- 24. 오라바의 거석문 / 924 -->
+        <div class="location-card">
+          <div class="location-image-wrap">
+            <img src="https://daepajoa.moe/MSJ/z/924.webp" alt="오라바의 거석문" />
+          </div>
+          <p class="location-name">
+            <span class="location-index">24.</span>오라바의 거석문
+          </p>
+        </div>
+
+        <!-- 25. 사막의 왕좌 / 925 -->
+        <div class="location-card">
+          <div class="location-image-wrap">
+            <img src="https://daepajoa.moe/MSJ/z/925.webp" alt="사막의 왕좌" />
+          </div>
+          <p class="location-name">
+            <span class="location-index">25.</span>사막의 왕좌
+          </p>
+        </div>
+
+        <!-- 26. 천계 / 999 -->
+        <div class="location-card">
+          <div class="location-image-wrap">
+            <img src="https://daepajoa.moe/MSJ/z/999.webp" alt="천계" />
+          </div>
+          <p class="location-name">
+            <span class="location-index">26.</span>천계
+          </p>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
