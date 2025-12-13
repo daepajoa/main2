@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>파티 소개</title>
+  <style>
+    :root{
+      --bg:#0b0c10;
+      --panel:#121420;
+      --text:#f3f5ff;
+      --muted:#b7bdd6;
+      --line:rgba(255,255,255,.10);
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius:18px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", Arial, sans-serif;
+      background: radial-gradient(1200px 800px at 20% -10%, rgba(120,120,255,.18), transparent 55%),
+                  radial-gradient(1000px 700px at 100% 0%, rgba(255,120,180,.12), transparent 50%),
+                  var(--bg);
+      color:var(--text);
+    }
+    .wrap{
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 28px 18px 60px;
+    }
+    header{
+      padding: 10px 6px 22px;
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap: 12px;
+      border-bottom:1px solid var(--line);
+      margin-bottom: 18px;
+    }
+    h1{
+      margin:0;
+      font-size: 26px;
+      letter-spacing: -.02em;
+    }
+    .sub{
+      margin:0;
+      color:var(--muted);
+      font-size: 13px;
+    }
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 14px;
+    }
+    .card{
+      grid-column: span 12;
+      background: linear-gradient(180deg, rgba(255,255,255,.04), transparent 60%),
+                  var(--panel);
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      display:grid;
+      grid-template-columns: 220px 1fr;
+      min-height: 220px;
+    }
+    .media{
+      position:relative;
+      border-right: 1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding: 10px;
+    }
+    .media img{
+      width: 100%;
+      height: auto;
+      max-height: 360px;
+      object-fit: contain;
+      border-radius: 14px;
+      filter: drop-shadow(0 12px 18px rgba(0,0,0,.35));
+    }
+    .content{
+      padding: 16px 18px 18px;
+      display:flex;
+      flex-direction:column;
+      gap: 10px;
+    }
+    .name{
+      margin:0;
+      font-size: 22px;
+      letter-spacing: -.02em;
+      display:flex;
+      align-items:baseline;
+      gap: 10px;
+      flex-wrap:wrap;
+    }
+    .tagline{
+      margin:0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    .meta{
+      display:flex;
+      flex-wrap:wrap;
+      gap: 8px;
+      margin-top: 4px;
+    }
+    .pill{
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      color: var(--text);
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      white-space:nowrap;
+    }
+    .desc{
+      margin: 2px 0 0;
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 14px;
+    }
+    .src{
+      margin-top:auto;
+      display:flex;
+      gap: 10px;
+      flex-wrap:wrap;
+      align-items:center;
+      padding-top: 10px;
+      border-top:1px dashed rgba(255,255,255,.12);
+    }
+    .src a{
+      color: #b9c7ff;
+      text-decoration:none;
+      font-size: 12px;
+      opacity:.95;
+    }
+    .src a:hover{ text-decoration:underline; }
+
+    @media (max-width: 720px){
+      .card{ grid-template-columns: 1fr; }
+      .media{ border-right:none; border-bottom:1px solid var(--line); }
+      .media img{ max-height: 420px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div>
+        <h1>파티 멤버 소개</h1>
+        <p class="sub">이미지 + 프로필 카드</p>
+      </div>
+      <p class="sub">YS2</p>
+    </header>
+
+    <main class="grid">
+
+      <!-- 아자젤 -->
+      <section class="card" id="azazel">
+        <div class="media">
+          <img src="https://a.daepajoa.moe/YS2/a/101.webp" alt="아자젤" loading="lazy" />
+        </div>
+        <div class="content">
+          <h2 class="name">아자젤 <span class="pill">24세</span> <span class="pill">여성</span></h2>
+          <p class="tagline">2대 용사 / 팔라딘</p>
+          <div class="meta">
+            <span class="pill">아르벤 왕국 고아원 출신</span>
+            <span class="pill">영혼 감응</span>
+            <span class="pill">교단</span>
+          </div>
+          <p class="desc">
+            아르벤 왕국 고아원 출신. 신앙신과 영혼 감응 능력을 인정받아 교단의 팔라딘으로 성장했다.
+            109년, 신의 계시를 받고 2대 용사로 임명된다.
+          </p>
+          <div class="src">
+            <a href="https://a.daepajoa.moe/YS2/a/101.webp" target="_blank" rel="noreferrer noopener">이미지 링크</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 발터 라그나 -->
+      <section class="card" id="walter">
+        <div class="media">
+          <img src="https://a.daepajoa.moe/YS2/c/101.webp" alt="발터 라그나" loading="lazy" />
+        </div>
+        <div class="content">
+          <h2 class="name">발터 라그나 <span class="pill">29세</span> <span class="pill">남성</span></h2>
+          <p class="tagline">전 왕국군 / 마검사</p>
+          <div class="meta">
+            <span class="pill">라그나 가문 장남</span>
+            <span class="pill">이단 취급</span>
+            <span class="pill">자원입대</span>
+          </div>
+          <p class="desc">
+            이단 취급을 받는 라그나 가문의 장남. 왕국군에 자원입대해 전장에서 그 실력을 인정받았다.
+            아자젤을 만난 순간 첫눈에 반해 파티에 자원 참가한다.
+          </p>
+          <div class="src">
+            <a href="https://a.daepajoa.moe/YS2/c/101.webp" target="_blank" rel="noreferrer noopener">이미지 링크</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 네이블 -->
+      <section class="card" id="nable">
+        <div class="media">
+          <img src="https://a.daepajoa.moe/YS2/d/101.webp" alt="네이블" loading="lazy" />
+        </div>
+        <div class="content">
+          <h2 class="name">네이블 <span class="pill">24세</span> <span class="pill">여성</span></h2>
+          <p class="tagline">전투수도승</p>
+          <div class="meta">
+            <span class="pill">아르벤 왕국 고아원 출신</span>
+            <span class="pill">타고난 힘</span>
+            <span class="pill">집중력</span>
+          </div>
+          <p class="desc">
+            아르벤 왕국 고아원 출신. 타고난 힘과 집중력을 인정받아 교단의 전투 수도승으로 발탁되었다.
+            아자젤의 소꿉친구이자 유일한 의지처다.
+          </p>
+          <div class="src">
+            <a href="https://a.daepajoa.moe/YS2/d/101.webp" target="_blank" rel="noreferrer noopener">이미지 링크</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 메리엘 오르디나 -->
+      <section class="card" id="meriel">
+        <div class="media">
+          <img src="https://a.daepajoa.moe/YS2/e/101.webp" alt="메리엘 오르디나" loading="lazy" />
+        </div>
+        <div class="content">
+          <h2 class="name">메리엘 오르디나 <span class="pill">32세</span> <span class="pill">여성</span></h2>
+          <p class="tagline">몰락귀족 / 인챈터</p>
+          <div class="meta">
+            <span class="pill">오르디나 가문</span>
+            <span class="pill">금기마법</span>
+            <span class="pill">미래시</span>
+          </div>
+          <p class="desc">
+            몰락귀족 오르디나 가문의 마지막 후예. 가문의 쇠퇴를 막기 위해 금기마법, 미래시에 손을 대었고,
+            그 결과 가문이 몰락했다. 마왕 토벌 공로로 가문을 부흥시키는 것이 목표이다.
+          </p>
+          <div class="src">
+            <a href="https://a.daepajoa.moe/YS2/e/101.webp" target="_blank" rel="noreferrer noopener">이미지 링크</a>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+</body>
+</html>
