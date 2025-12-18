@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Character Sheets</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jua&family=Pretendard:wght@400;600;800;900&display=swap" rel="stylesheet">
+  <style>
+
+:root{
+  /* 분위기 */
+  --bg1:#0b0b12;
+  --bg2:#141433;
+  --card: rgba(255,255,255,.06);
+  --card2: rgba(255,255,255,.10);
+  --text:#f6f6ff;
+  --muted:rgba(246,246,255,.72);
+  --line:rgba(255,255,255,.14);
+  --radius:22px;
+
+  /* 포인트(캐릭터마다 바뀌게 할 거) */
+  --accent:#ff7ac8;
+  --accent-rgb: 255,122,200;
+
+  /* 이미지 비율 */
+  --thumb-ratio: 1024 / 2432;
+  --stand-ratio: 1 / 1;
+
+  --accent:#ff7ac8;
+  --accent-rgb: 255,122,200;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans KR", sans-serif;
+  color:var(--text);
+  background:
+    radial-gradient(1200px 800px at 20% 10%, rgba(255,122,200,.20), transparent 60%),
+    radial-gradient(900px 700px at 85% 20%, rgba(122,220,255,.18), transparent 55%),
+    radial-gradient(900px 700px at 40% 95%, rgba(180,140,255,.16), transparent 60%),
+    linear-gradient(180deg, var(--bg1), var(--bg2));
+}
+
+.wrap{max-width:980px;margin:0 auto;padding:22px 14px 64px}
+
+.title{
+  margin: 10px 0 18px;
+  text-align:center;                /* ✅ 가운데 */
+}
+
+.title h1{
+  margin:0;
+  font-family: "Jua", "Noto Sans KR", system-ui, sans-serif;  /* ✅ 예쁜 폰트 */
+  font-size: 34px;                  /* ✅ 크게 */
+  letter-spacing: .5px;
+
+  /* ✅ 폰트 색: 기본은 흰+파스텔 그라데이션 + 클릭 시 accent 반영됨 */
+  background: linear-gradient(
+    90deg,
+    rgba(255,255,255,.96),
+    rgba(var(--accent-rgb), .95)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+
+  text-shadow:
+    0 10px 28px rgba(0,0,0,.45),
+    0 0 26px rgba(var(--accent-rgb), .18);
+}
+
+/* badge 쓰고 있으면 이렇게만 남기기(없애도 됨) */
+.badge{
+  display:inline-block;
+  margin-top:10px;
+  font-size:12px;
+  color: rgba(255,255,255,.82);
+  padding:7px 12px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.14);
+  background: rgba(0,0,0,.18);
+  backdrop-filter: blur(10px);
+}
+
+/* ===== 썸네일 그리드 ===== */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.thumb{
+  appearance:none;
+  padding:0;
+  border:1px solid rgba(255,255,255,.14);
+  border-radius:var(--radius);
+  background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.03));
+  overflow:hidden;
+  cursor:pointer;
+  position:relative;
+  text-align:left;
+  box-shadow:
+    0 18px 40px rgba(0,0,0,.35),
+    0 0 0 1px rgba(255,255,255,.06) inset;
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+.thumb:hover{
+  transform: translateY(-4px);
+  border-color: rgba(255,255,255,.22);
+  box-shadow:
+    0 24px 60px rgba(0,0,0,.45),
+    0 0 0 1px rgba(255,255,255,.10) inset,
+    0 0 30px rgba(var(--accent-rgb), .22);
+}
+.thumb:focus-visible{
+  outline:none;
+  box-shadow:
+    0 0 0 3px rgba(255,255,255,.22),
+    0 0 0 6px rgba(var(--accent-rgb), .22);
+}
+
+/* ✅ 1024x2432 고정 프레임 */
+.thumbMedia{width:100%;aspect-ratio:var(--thumb-ratio);background:rgba(255,255,255,.04)}
+.thumbMedia img{width:100%;height:100%;display:block;object-fit:cover;object-position:center}
+
+/* ===== 패널(토글) ===== */
+.panel{
+  margin-top: 16px;
+  border-radius: calc(var(--radius) + 2px);
+  border: 1px solid rgba(255,255,255,.14);
+  background:
+    radial-gradient(900px 500px at 20% 0%, rgba(255,255,255,.10), transparent 60%),
+    linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.03));
+  box-shadow:
+    0 26px 70px rgba(0,0,0,.55),
+    0 0 0 1px rgba(255,255,255,.08) inset,
+    0 0 45px rgba(var(--accent-rgb), .28);
+  overflow:hidden;
+  display:none;
+}
+.panel.is-open{
+  display:block;
+  animation: pop .22s ease-out;
+}
+@keyframes pop{
+  from{ transform: translateY(8px); opacity:.0; }
+  to{ transform: translateY(0); opacity:1; }
+}
+
+.panelHead{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding: 12px 12px;
+  border-bottom: 1px solid rgba(255,255,255,.12);
+}
+.back{
+  appearance:none;
+  border:1px solid rgba(255,255,255,.18);
+  background: rgba(0,0,0,.18);
+  color: var(--text);
+  border-radius: 999px;
+  padding: 9px 12px;
+  font-weight: 900;
+  cursor:pointer;
+  backdrop-filter: blur(12px);
+  transition: transform .12s ease, box-shadow .12s ease;
+}
+.back:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 0 0 3px rgba(255,255,255,.10), 0 0 22px rgba(var(--accent-rgb), .22);
+}
+.panelTitle{
+  font-weight: 1000;
+  letter-spacing:.2px;
+  padding-left:2px;
+}
+.panelTitle span{
+  color: var(--muted);
+  font-weight:800;
+  margin-left:6px;
+  font-size: 13px;
+}
+
+.panelBody{
+  display:grid;
+  grid-template-columns: 320px 1fr;
+  gap: 12px;
+  padding: 12px;
+  align-items: stretch;
+}
+
+/* 스탠딩 카드 */
+.standing{
+  height: 100%;
+  border-radius: var(--radius);
+  border:1px solid rgba(255,255,255,.14);
+  background: rgba(0,0,0,.18);
+  overflow:hidden;
+  box-shadow: 0 20px 55px rgba(0,0,0,.45);
+  align-self: start;           /* ✅ 추가 */
+}
+
+.standingFrame{
+  width:100%;
+  height:100%;
+  background: rgba(255,255,255,.03);
+}
+
+.standingFrame img{
+  width:100%;
+  height:100%;
+  object-fit: cover;
+  object-position: center top;
+  display:block;
+}
+
+/* 시트 카드 */
+.sheet{
+  border-radius: var(--radius);
+  border:1px solid rgba(255,255,255,.14);
+  background: rgba(0,0,0,.16);
+  backdrop-filter: blur(14px);
+  padding: 14px 14px 8px;
+}
+.oneLine{
+  margin:0 0 10px;
+  font-weight: 1000;
+  line-height:1.35;
+}
+.kv{margin:0;padding:0;list-style:none;border-top:1px dashed rgba(255,255,255,.14)}
+.kv li{padding:10px 0;border-bottom:1px dashed rgba(255,255,255,.14)}
+.k{
+  display:block;
+  color: var(--muted);
+  font-size: 12px;
+  margin-bottom: 6px;
+  font-weight: 1000;
+  letter-spacing:.2px;
+}
+.v{display:block;font-size:14px;line-height:1.5;white-space:pre-wrap}
+
+/* 모바일 */
+@media (max-width: 860px){
+  .grid{grid-template-columns:1fr}
+  .panelBody{grid-template-columns:1fr}
+}
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="title">
+      <h1>특이취향 여자친구 캐릭터 소개</h1>
+      <div class="badge">이미지를 클릭하면 정보 시트가 열려요</div>
+</div>
+
+    <!-- ✅ 클릭용 세로 이미지 3장 -->
+    <div class="grid" id="thumbGrid">
+      <button class="thumb" data-key="yurim" type="button" aria-label="강유림 시트 열기">
+        <div class="thumbMedia">
+          <img src="https://a.daepajoa.moe/ATM/KYR.webp" alt="강유림 썸네일" />
+        </div>
+      </button>
+
+      <button class="thumb" data-key="chaebin" type="button" aria-label="문채빈 시트 열기">
+        <div class="thumbMedia">
+          <img src="https://a.daepajoa.moe/ATM/MCB.webp" alt="문채빈 썸네일" />
+        </div>
+      </button>
+
+      <button class="thumb" data-key="eunhyuk" type="button" aria-label="최은혁 시트 열기">
+        <div class="thumbMedia">
+          <img src="https://a.daepajoa.moe/ATM/CEH.webp" alt="최은혁 썸네일" />
+        </div>
+      </button>
+    </div>
+
+    <!-- ✅ 토글 디테일 -->
+    <section class="panel" id="panel" aria-live="polite">
+      <div class="panelHead">
+        <button class="back" type="button" id="backBtn">← 닫기</button>
+        <div class="panelTitle" id="panelTitle">—</div>
+      </div>
+
+      <div class="panelBody">
+        <div class="standing">
+          <div class="standingFrame">
+            <img id="standingImg" src="" alt="스탠딩 이미지" />
+          </div>
+        </div>
+
+        <div class="sheet">
+          <p class="oneLine" id="oneLine">—</p>
+          <ul class="kv" id="kvList"></ul>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    const DATA = {
+      yurim: {
+        accent: "#ff7ac8",
+        name: "강유림, 22세",
+        standing: "https://a.daepajoa.moe/ATM/a/101.webp", // ✅ 1024x1024
+        oneLine: "오빠만 사랑하는 순둥이 여자친구, 강유림이야! 오빠를 위해서라면 뭐든지 할 수 있다구♡ 헤헤... 그러니까 오빠도, 나 잘 부탁해?",
+        items: [
+          ["인상", "강아지상 눈웃음, 부끄럼 많고 살짝 앵기는 타입. 청순하고 말도 부드러워"],
+          ["외형 키워드", "153cm / C컵 / 밤색 생머리+앞머리 / 큰 눈 / 검은 니트+미니스커트"],
+          ["성격 키워드", "귀여움, 순함, 애교, 헌신적, 스킨십"],
+          ["장점", "분위기 풀어주는 재주, 상대 기분 맞춰주는 센스, 연인에게 애정표현 확실하지"],
+          ["단점", "불안할 때 말 돌리기, 대답을 흐리는 버릇, 감정 기복이 은근히 있어"]
+        ]
+      },
+      chaebin: {
+        accent: "#7adcff",
+        name: "문채빈 23세",
+        standing: "https://a.daepajoa.moe/ATM/b/101.webp",
+        oneLine: "안녕, 유림이 아는 언니, 문채빈. 화려하게 노는 거 좋아하지만... 열받는 건 또 못 본 척 못 하거든. 앞으로 잘 지내자?",
+        items: [
+          ["첫인상", "친화력 MAX, 장난 많고 거리감 없고, 파티 분위기 잘 띄워"],
+          ["외형 키워드", "163cm / 글래머 / 금발 웨이브 / 진한 화장 / 흰 크롭티+퍼 자켓+가죽치마 / 피어싱"],
+          ["성격 키워드", "밝음, 장난, 스킨십 많은 편, 오픈마인드, 방관주의"],
+          ["장점", "상황 판단 빠름, 눈치와 관찰력, 위기 때도 태연하지"],
+          ["단점", "선 넘는 농담으로 떠보기, 가끔 차갑게 느껴질 수도"]
+        ]
+      },
+      eunhyuk: {
+        accent: "#b48cff",
+        name: "최은혁 25세",
+        standing: "https://a.daepajoa.moe/ATM/c/101.webp",
+        oneLine: "하하, 반갑습니다! 유림이네 학교 선배, 최은혁이에요. 분위기 풀고 친해지는 건 자신 있으니까, 편하게 지내요.",
+        items: [
+          ["첫인상", "사교적이고 센스 좋고, 분위기메이커. 선도 잘 지키며 자연스러워"],
+          ["외형 키워드", "184cm / 은발 / 회색 트레이닝복"],
+          ["성격 키워드", "친절, 능글, 태연, 재치, 사람 다루는 솜씨"],
+          ["장점", "말로 상대 편하게 만드는 능력, 분위기 장악, 거리 조절이 능숙해"],
+          ["단점", "은근한 우월감, 사람을 깔보는 것 같아"]
+        ]
+      }
+    };
+
+    const panel = document.getElementById("panel");
+    const panelTitle = document.getElementById("panelTitle");
+    const standingImg = document.getElementById("standingImg");
+    const oneLine = document.getElementById("oneLine");
+    const kvList = document.getElementById("kvList");
+    const backBtn = document.getElementById("backBtn");
+
+    function openSheet(key){
+      const d = DATA[key];
+      if(!d) return;
+
+      document.documentElement.style.setProperty("--accent", d.accent || "#ff7ac8");
+      document.documentElement.style.setProperty("--accent-rgb", d.accentRgb || "255,122,200");
+      panelTitle.textContent = d.name;
+      standingImg.src = d.standing;
+      standingImg.alt = d.name + " 스탠딩";
+      oneLine.textContent = d.oneLine;
+
+      kvList.innerHTML = "";
+      d.items.forEach(([k,v])=>{
+        const li = document.createElement("li");
+        li.innerHTML = `<span class="k">${k}</span><span class="v">${v}</span>`;
+        kvList.appendChild(li);
+      });
+
+      panel.classList.add("is-open");
+      panel.scrollIntoView({behavior:"smooth", block:"start"});
+    }
+
+    function closeSheet(){
+      panel.classList.remove("is-open");
+      document.getElementById("thumbGrid").scrollIntoView({behavior:"smooth", block:"start"});
+    }
+
+    document.querySelectorAll(".thumb").forEach(btn=>{
+      btn.addEventListener("click", ()=> openSheet(btn.dataset.key));
+    });
+    backBtn.addEventListener("click", closeSheet);
+  </script>
+</body>
+</html>
