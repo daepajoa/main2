@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>목록</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* 목록 페이지 전용 스타일 */
+        .episode-item {
+            display: block; /* 블록으로 만들어서 전체 클릭 가능 */
+            max-width: 500px;
+            margin: 0 auto 40px auto; /* 세로 간격 */
+            text-align: center;
+        }
+        .thumb-img {
+            width: 100%;
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+        .episode-item:hover .thumb-img {
+            transform: scale(1.02); /* 마우스 올리면 살짝 커짐 */
+            opacity: 0.8;
+        }
+        .ep-title {
+            margin-top: 10px;
+            font-size: 1.1rem;
+            color: #ccd6f6;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="home-link">MAIN</a>
+
+    <div style="padding-top: 100px; padding-bottom: 50px;">
+        <h2 style="text-align: center; margin-bottom: 50px; font-weight: 300;">EPISODE LIST</h2>
+
+        <a href="ep1.html" class="episode-item">
+            <img src="thumb1.jpg" class="thumb-img" alt="1화 썸네일"> 
+            <div class="ep-title">제 1화</div>
+        </a>
+
+        <a href="ep2.html" class="episode-item">
+            <img src="thumb2.jpg" class="thumb-img" alt="2화 썸네일">
+            <div class="ep-title">제 2화</div>
+        </a>
+
+        <a href="ep3.html" class="episode-item">
+            <img src="thumb3.jpg" class="thumb-img" alt="3화 썸네일">
+            <div class="ep-title">제 3화</div>
+        </a>
+
+        <a href="ep4.html" class="episode-item">
+            <img src="thumb4.jpg" class="thumb-img" alt="4화 썸네일">
+            <div class="ep-title">제 4화</div>
+        </a>
+    </div>
+
+</body>
+</html>

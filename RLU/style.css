@@ -1,0 +1,82 @@
+/* style.css */
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+body {
+    background-color: #0a192f; /* 어두운 네이비 */
+    color: #ffffff; /* 흰색 글씨 */
+    font-family: 'Pretendard', sans-serif; /* 깔끔한 고딕 */
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* 가로 스크롤 방지 */
+}
+
+/* 모든 링크: 밑줄 없애고 흰색으로 */
+a {
+    text-decoration: none;
+    color: #e6f1ff;
+    transition: opacity 0.3s;
+    cursor: pointer;
+}
+
+/* 마우스 올리면 살짝 흐려짐 (고급스러운 효과) */
+a:hover {
+    opacity: 0.7;
+}
+
+/* 4. 왼쪽 상단 '메인으로' (모든 페이지 공통) */
+.home-link {
+    position: fixed;
+    top: 20px;
+    left: 25px;
+    font-size: 0.9rem;
+    font-weight: 300; /* 얇은 글씨 */
+    z-index: 2000; /* 제일 위에 뜨게 */
+    opacity: 0.5; /* 평소엔 연하게 */
+}
+.home-link:hover { opacity: 1; }
+
+/* 이미지 중앙 정렬용 컨테이너 */
+.center-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+    text-align: center;
+}
+
+/* 6. 상단 고정 1~4화 내비게이션 (뷰어용) */
+.viewer-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: rgba(10, 25, 47, 0.95); /* 배경색과 같지만 살짝 투명 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255,255,255,0.1); /* 아주 얇은 선 */
+}
+
+.nav-link {
+    margin: 0 15px;
+    font-size: 1rem;
+    color: #8892b0; /* 비활성: 회색빛 네이비 */
+}
+
+.nav-link.active {
+    color: #64ffda; /* 활성: 민트 포인트 */
+    font-weight: bold;
+    border-bottom: 2px solid #64ffda; /* 밑줄 포인트 */
+}
+
+/* 본문 영역 */
+.content-area {
+    max-width: 800px;
+    margin: 80px auto 100px auto; /* 상단바 공간 확보 */
+    text-align: center;
+    line-height: 1.8;
+}
